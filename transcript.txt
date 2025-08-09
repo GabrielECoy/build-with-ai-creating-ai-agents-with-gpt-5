@@ -1,0 +1,107 @@
+[00:00] Kesha: Alright team, thanks for making time. I know everyone’s busy, but this is a big one — launching the AI Office. We’re going to run it on the RAISE Framework, so this meeting is about how we make that real on day one.
+
+Jordan: Before we start — who’s bringing snacks next time? Last week’s granola bars were… let’s just say, a missed opportunity.
+
+Sofia: Noted. I’ll put “better snacks” in the meeting minutes.
+
+Priya: As long as we don’t use AI to generate them.
+
+Marcus: Now I’m curious what a GPT-baked cookie would taste like.
+
+Kesha: Probably like JSON. Anyway — focus.
+
+[02:10] Kesha: Let’s go pillar by pillar. First: Responsible AI Practices. This is our foundation. We can’t just publish a policy and call it done.
+
+Sofia: Agreed. We should do role-based training — different for developers, analysts, leadership. And not just a one-time thing; make it ongoing.
+
+Jordan: And maybe an internal AI “driver’s license” program before someone can deploy a model. You pass the test, you get the badge.
+
+Marcus: That’s good. Could also include prompt engineering guidelines so they’re using the models effectively and safely.
+
+Priya: Don’t forget an ethics checklist before a project gets greenlit.
+
+Kesha: Okay — I’m hearing training, licensing, and a checklist. We’ll design all three.
+
+[05:00] Jordan: Second pillar — Data Privacy and Protection. Ethan will have a lot to say here once he joins, but for now…
+
+Marcus: We’ll need fine-grained access controls — not everyone needs to see all data.
+
+Sofia: And anonymization where possible.
+
+Jordan: But remember, anonymization can reduce accuracy for certain ML models. We have to balance privacy and performance.
+
+Priya: Plus, compliance laws differ by region — GDPR in Europe, CCPA in California. We need a location-based compliance matrix.
+
+Kesha: Let’s make that an action item: Jordan and Priya, work together on that matrix.
+
+[08:15] Priya: Third — AI System Lifecycle Management. How are we managing models from design to retirement?
+
+Marcus: I’d like a standard model card template — includes purpose, data sources, evaluation metrics, risks, and last retraining date.
+
+Sofia: And a review checkpoint every quarter for high-impact models.
+
+Jordan: What about versioning? We need clear rollbacks in case a new model fails in production.
+
+Kesha: Yes, model rollback protocols are non-negotiable.
+
+[11:00] Ethan: [joins] Sorry I’m late — the security audit call went over. Where are we?
+
+Kesha: Data Privacy was your pillar. Go ahead.
+
+Ethan: First, all sensitive datasets must be encrypted in transit and at rest. We’ll use differential privacy for sensitive analytics where possible. And yes, anonymization, but only with performance testing.
+
+Jordan: That’s exactly what we discussed.
+
+Ethan: Good. And we need an AI-specific incident response plan — how to contain and investigate if a model leaks data or gets compromised.
+
+[14:00] Sofia: That ties into Incident Response and Feedback, another RAISE pillar.
+
+Marcus: I propose a dedicated Teams channel tied to Jira so incidents are logged automatically.
+
+Ethan: And a post-incident review process that’s actually useful, not just paperwork.
+
+Priya: With a clear decision on whether a model can return to production.
+
+Kesha: Perfect.
+
+[16:30] Jordan: On Algorithm and Model Oversight, I suggest automated fairness testing in the CI/CD pipeline plus a rotating human review panel.
+
+Sofia: Rotating is smart — avoids bias from the reviewers themselves.
+
+Marcus: And add explainability checks, especially for regulated industries.
+
+Priya: Which means we need legal to sign off before release in certain sectors.
+
+[19:00] Kesha: Compliance and Risk Management — Priya, this is your area.
+
+Priya: Every AI initiative gets a risk score: low, medium, high. Low-risk projects get a fast-track approval; medium and high go through full governance review.
+
+Jordan: That’ll keep innovation from slowing down.
+
+Sofia: But we need to define what “low risk” means.
+
+Kesha: Add that to the definitions doc.
+
+[21:30] Sofia: For culture, we could do quarterly “Responsible AI Clinics” where teams bring their projects for advice before going live.
+
+Jordan: And highlight success stories so governance doesn’t feel like a blocker.
+
+Marcus: Yes — make the AI Office a partner in innovation.
+
+Kesha: That’s the goal.
+
+[24:00] Ethan: One last thing — Shadow AI. People are already using unapproved tools.
+
+Priya: We’ll need a safe way for them to disclose that without fear of punishment.
+
+Sofia: Maybe an anonymous survey.
+
+Kesha: Good. Add it to the change management plan.
+
+[26:15] Kesha: Okay, action items — Marcus: draft model lifecycle workflows. Priya: compliance checklist and risk scoring matrix. Jordan: data stewardship plan. Sofia: training and AI Clinic design. Ethan: AI security and incident response.
+
+We’ll reconvene in two weeks. The AI Office is going to set the standard for scaling AI responsibly — and RAISE will keep us accountable.
+
+All: Agreed.
+
+Kesha: Let’s make it happen.
