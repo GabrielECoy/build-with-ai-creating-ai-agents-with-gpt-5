@@ -9,6 +9,7 @@ You’ll learn how to:
 ## Requirements
 - Python 3.9+
 - An [OpenAI API key](https://platform.openai.com/account/api-keys)
+- A [Weather API key](https://www.weatherapi.com/my/)
 
 ## Setup
 
@@ -23,9 +24,14 @@ You’ll learn how to:
     ```bash
     pip install -r requirements.txt
     ```
-4. **Set your OpenAI API key**:
+4. **Set your OpenAI API key or place in .env file**:
     ```bash
     export OPENAI_API_KEY="your_api_key"      # macOS/Linux
+    setx OPENAI_API_KEY "your_api_key"        # Windows PowerShell
+    ```
+5. **Set your Weather API key or place in .env file**:
+    ```bash
+    export WEATHER_API_KEY="your_api_key"      # macOS/Linux
     setx OPENAI_API_KEY "your_api_key"        # Windows PowerShell
     ```
 

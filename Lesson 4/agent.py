@@ -5,13 +5,17 @@ All examples use Python and the OpenAI client.
 Prereqs:
   pip install openai
   pip install python-dotenv
-  export OPENAI_API_KEY="sk-..."
+  export API_KEY = os.environ[...]
 """
 import os
 from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
-from agents import Agent, Runner, function_tool
+from agents import Agent, Runner, function_tool, ModelSettings, SQLiteSession
 from dataclasses import dataclass
+from datetime import datetime
+import requests
+import asyncio
+
 
 # read local .env file
 _ = load_dotenv(find_dotenv()) 
@@ -21,35 +25,94 @@ client = OpenAI(
   api_key=os.environ['OPENAI_API_KEY']  
 )
 
-if not api_key:
-   raise ValueError("OPENAI_API_KEY not found in local .env file")
-
 # # ---------------------------------------------------------------------------
-# # LESSON 2 (Build a Basic Agent with Tool Calling)
+# # LESSON 3 (Extend the agent with memory)
 # # ---------------------------------------------------------------------------
 @dataclass
-class PlotInfo:
-    transcript: str
-    location: str
-    attendee_count: str
+class WeatherInfo:
+    city: str
+    country: str
+    temp_f: float
+    condition: str
 
 @function_tool
-def generate_summary_tool(text: str) -> str:
+def get_weather_forecast(city: str):
+    """Fetch weather info using the Weather API - https://www.weatherapi.com/
+       Create an account and generate your API key - https://www.weatherapi.com/my/ 
     """
-    Summarize a meeting
-    """
-    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-    if not lines:
-        return "No content provided."
-    head = lines[0][:120]
-    return f"{head} … (summary generated)"
+    API_KEY = api_key=os.environ['WEATHER_API_KEY']
+    WEATHER_BASE_URL = 'https://api.weatherapi.com/v1/current.json'
 
-agent = Agent(
-    name="Meeting Summary Agent",
-    instructions="You are a helpful assistant. Use the tool to summarize meeting transcripts.",
-    model="gpt-5",
-    tools=[generate_summary_tool]
-)
+    try:
+        today = datetime.today().strftime('%Y-%m-%d')
+        params = {"q": city, "aqi": "no", "key": API_KEY}
+        
+        #construct request and call api
+        response = requests.get(WEATHER_BASE_URL, params=params)
+        response.raise_for_status()
 
-result = Runner.run_sync(agent, f"Summarize this meeting transcript: {transcript_text}")
-print(result.final_output)
+        data = response.json()
+
+        # Basic validation
+        if "location" not in data or "current" not in data:
+            return f"Could not retrieve weather for '{city}'. Try a more specific place name."
+
+        weather = WeatherInfo(
+            city=data["location"]["name"],
+            country=data["location"]["country"],
+            temp_f=float(data["current"]["temp_f"]),
+            condition=data["current"]["condition"]["text"]
+        )
+
+        weather_report = [f"Real-time weather report for {today}:"]
+
+        weather_report.append(
+                f"   - City: {weather.city}"
+                f"   - Country: {weather.country}"
+                f"   - Temperature: {weather.temp_f:.1f} °F"
+                f"   - Weather Conditions: {weather.condition}"
+            )
+
+        return "\n".join(weather_report)
+    except requests.exceptions.RequestException as e:
+        return f"Error fetching weather data: {str(e)}"
+
+async def main():
+   city = "Atlanta"
+   session = SQLiteSession("travel_assistant")
+
+   trip_agent = Agent(
+        name="Trip Coach",
+        instructions=(
+            "You help travelers plan activities to do while on vacation but you check the weather first in real-time."
+            "When asked about weather, call the get_weather_forecast tool."
+            "Make sure you have access to real-time weather data to make your recommendations."
+            "Make sure to pick activities that solo travlers will enjoy. Use web search if necessary."
+        ),
+        model="gpt-5",
+        tools=[get_weather_forecast],
+        model_settings=ModelSettings(               
+            reasoning={"effort": "minimal"}   
+        )
+    )
+   
+    # First turn
+   result = await Runner.run(trip_agent, 
+                             f"""Headed to {city} today. What weather should I expect and what is the 
+                                       exact temperature right now? What things do you recommend I do while visiting the city?""",
+                             session=session)
+   print(result.final_output)
+   print("-"*70)
+
+
+   # Second turn - agent automatically remembers previous context
+   result = await Runner.run(
+     trip_agent,
+     "Can you recommend a seafood restaurant?",
+     session=session
+   )
+
+   print(result.final_output)  
+
+if __name__ == "__main__":
+   asyncio.run(main())  # Run the async function
