@@ -87,19 +87,20 @@ async def main():
             "You help travelers plan activities to do while on vacation but you check the weather first in real-time."
             "When asked about weather, call the get_weather_forecast tool."
             "Make sure you have access to real-time weather data to make your recommendations."
-            "Make sure to pick activities that solo travlers will enjoy. Use web search if necessary."
+            "Make sure to pick activities that solo travelers will enjoy. Use web search if necessary."
         ),
         model="gpt-5",
         tools=[get_weather_forecast],
-        model_settings=ModelSettings(               
-            reasoning={"effort": "minimal"}   
+        model_settings=ModelSettings(
+            reasoning={"effort": "medium"},   # minimal | low | medium | high 
+            extra_body={"text":{"verbosity":"medium"}}  # low | medium | high
         )
     )
    
     # First turn
    result = await Runner.run(trip_agent, 
-                             f"""Headed to {city} today. What weather should I expect and what is the 
-                                       exact temperature right now? What things do you recommend I do while visiting the city?""",
+                             f"""Headed to {city} today. What’s the weather like, and what 
+                                should I pack?""",
                              session=session)
    print(result.final_output)
    print("-"*70)

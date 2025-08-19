@@ -81,19 +81,23 @@ trip_agent = Agent(
         "You help travelers plan activities to do while on vacation but you check the weather first in real-time."
         "When asked about weather, call the get_weather_forecast tool."
         "Make sure you have access to real-time weather data to make your recommendations."
-        "Make sure to pick activities that solo travlers will enjoy. Use web search if necessary."
+        "Make sure to pick activities that solo travelers will enjoy. Use web search if necessary."
     ),
     model="gpt-5",
     tools=[get_weather_forecast],
     # ---------- Lesson 3: steer behavior----------
     model_settings=ModelSettings(
-        reasoning={"effort": "high"}   # minimal | low | medium | high 
+        reasoning={"effort": "high"},   # minimal | low | medium | high 
+        extra_body={"text":{"verbosity":"low"}}  # low | medium | high
     )
 )
 
 city = "Atlanta"
 
-result = Runner.run_sync(trip_agent, f"""Headed to {city} today. What weather should I expect and what is the 
-                                       exact temperature right now? What things do you recommend I do while visiting the city?""")
+# result = Runner.run_sync(trip_agent, f"""Headed to {city} today. What weather should I expect and 
+#                                          what is the exact temperature right now? What should I pack?
+#                                          What things do you recommend I do while visiting the city?""")
+
+result = Runner.run_sync(trip_agent, f"""Headed to {city} today. Can you recommend a restaurant?""")
 print(result.final_output)
 
