@@ -26,7 +26,7 @@ client = OpenAI(
 )
 
 # # ---------------------------------------------------------------------------
-# # LESSON 3 (Extend the agent with memory)
+# # LESSON 4 (Extend the agent with memory)
 # # ---------------------------------------------------------------------------
 @dataclass
 class WeatherInfo:
