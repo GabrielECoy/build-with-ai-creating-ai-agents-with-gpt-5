@@ -87,17 +87,17 @@ trip_agent = Agent(
     tools=[get_weather_forecast],
     # ---------- Lesson 3: steer behavior----------
     model_settings=ModelSettings(
-        reasoning={"effort": "high"},   # minimal | low | medium | high 
+        reasoning={"effort": "low"},   # minimal | low | medium | high 
         extra_body={"text":{"verbosity":"low"}}  # low | medium | high
     )
 )
 
 city = "Atlanta"
 
-# result = Runner.run_sync(trip_agent, f"""Headed to {city} today. What weather should I expect and 
-#                                          what is the exact temperature right now? What should I pack?
-#                                          What things do you recommend I do while visiting the city?""")
+result = Runner.run_sync(trip_agent, f"""Headed to {city} today. What weather should I expect and 
+                                         what is the exact temperature right now? What should I pack?
+                                         What things do you recommend I do while visiting the city?""")
 
-result = Runner.run_sync(trip_agent, f"""Headed to {city} today. Can you recommend a restaurant?""")
+#result = Runner.run_sync(trip_agent, f"""Headed to {city} today. Can you recommend a restaurant?""")
 print(result.final_output)
 
