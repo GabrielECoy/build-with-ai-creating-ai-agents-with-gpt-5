@@ -98,13 +98,14 @@ class UserPrompt(BaseModel):
     prompt: str
 
 # ------------------------------
-# Create POST endpoint
+# *******TO RUN THE FASTAPI, FOLLOW THE STEPS BELOW*************
+# 
 # cd Lesson 5 folder
-# run uvicorn agent:app --reload
-# make public
+# make the Port public
+# run the command: uvicorn agent:app --reload
 # test in Postman or cURL
-# similar URL (POST) - https://ideal-space-barnacle-pwqqgv6gq45396x9-8000.app.github.dev/ask
-# JSON Request
+# POST to a similar endpoint (replace with your endpoint) - https://ideal-space-barnacle-pwqqgv6gq45396x9-8000.app.github.dev/ask
+# Send in a JSON request body:
 #   {
 #      "prompt": "I'm heading to Atlanta this weekend. What's the weather like, and what should I pack?"
 #   }
