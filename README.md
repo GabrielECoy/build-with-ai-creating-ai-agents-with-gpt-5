@@ -1,6 +1,8 @@
 # Build with AI: Creating AI Agents with GPT‑5
 This repository contains the Python code examples from the LinkedIn Learning course **Build with AI: Creating AI Agents with GPT‑5**.
 
+![Build with AI: Creating AI Agents with GPT-5](https://github.com/keshawillz/build-with-ai-creating-ai-agents-with-gpt-5/blob/main/course_image.png)
+
 You’ll learn how to:
 - Build agents that can call tools and take action
 - Steer GPT-5 output using verbosity and reasoning settings
