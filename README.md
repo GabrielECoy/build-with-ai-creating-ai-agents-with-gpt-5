@@ -8,13 +8,15 @@ Steps for creating a venv:
 
 OpenAI API key — sign up at https://platform.openai.com/signup
 Note:  I may have been able to use a Key generated at:OpenAI gpt-5 · GitHub Models (more info at "Hands-On AI: Introduction to Retrieval-Augmented Generation (RAG) - Yujian Tang"), but I used one from API keys - OpenAI API
-    from: https://platform.openai.com/api-keys
-    Name: Key for the Creating AI Agents with GPT‑5 course    
-    Secret Key: sk-...xEQA
-    Created: Oct 20, 2025
-    Last used: Never
-    Created by: Gabriel Coy
-    Permissions: All
+    
+from: https://platform.openai.com/api-keys
+Name: Key for the Creating AI Agents with GPT‑5 course    
+Secret Key: sk-...xEQA
+Created: Oct 20, 2025
+Last used: Never
+Created by: Gabriel Coy
+Permissions: All
+
 WeatherAPI key — used for the real-time weather tool, sign up at https://www.weatherapi.com
 See \\CoyTeraStation\Personal\Datos\Accesos y Subscripcion\Accesos\WeatherAPI
 I used a Code space for the exercises, but course was expecting to use local drive
