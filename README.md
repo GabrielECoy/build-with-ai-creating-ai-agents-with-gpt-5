@@ -6,9 +6,7 @@ Steps for creating a venv:
 - venv\Scripts\activate      # Windows
 - pip install -r requirements.txt
 
-OpenAI API key — sign up at https://platform.openai.com/signup
-Note:  I may have been able to use a Key generated at:OpenAI gpt-5 · GitHub Models (more info at "Hands-On AI: Introduction to Retrieval-Augmented Generation (RAG) - Yujian Tang"), but I used one from API keys - OpenAI API
-    
+OpenAI API key — sign up at https://platform.openai.com/signup 
 from: https://platform.openai.com/api-keys
 Name: Key for the Creating AI Agents with GPT‑5 course    
 Secret Key: sk-...xEQA
@@ -16,6 +14,18 @@ Created: Oct 20, 2025
 Last used: Never
 Created by: Gabriel Coy
 Permissions: All
+
+OpenAI returned 'insufficient_quota' (there is probably no API allowance for free accounts). Claude recommended the following solution:
+Go to https://platform.openai.com/account/billing
+Add a payment method (even if you have free credits)
+Generate a new API key
+Try again
+
+I tried to use use GitHub models OpenAI 5.0 (from https://github.com/marketplace/models/azure-openai/gpt-5/playground), but GPT5 models were returning "not available" in GitHub models, even when testing in the UI
+Note: Because I was using a GitHub models OpenAI key, I changed the instanciation of OpenAI to point to Azure OpenAI endpoint. I finally made it conditinal, based on the key pattern
+endpoint = "https://models.github.ai/inference" # or "https://models.inference.ai.azure.com"
+client = OpenAI(
+  api_key=os.environ['OPENAI_API_KEY'],base_url=endpoint) #model="openai/gpt-5"
 
 WeatherAPI key — used for the real-time weather tool, sign up at https://www.weatherapi.com
 See \\CoyTeraStation\Personal\Datos\Accesos y Subscripcion\Accesos\WeatherAPI
@@ -35,7 +45,6 @@ Used the following to load the value
 print(os.getcwd())
 from dotenv import load_dotenv
 load_dotenv()
-Note: If I were not using an OpenAI key, but a GitHub models OpenAI key, I would have changed the instanciation of OpenAI below to point to Azure OpenAI endpoint
 
 To confirm the value was there I used:
 import dotenv_values
