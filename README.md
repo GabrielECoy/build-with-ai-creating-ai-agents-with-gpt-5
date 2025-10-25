@@ -15,13 +15,21 @@ Last used: Never
 Created by: Gabriel Coy
 Permissions: All
 
-OpenAI returned 'insufficient_quota' (there is probably no API allowance for free accounts). Claude recommended the following solution:
+OpenAI returned 'insufficient_quota'. Information is confusing, but there is probably no API allowance for free accounts. https://platform.openai.com/docs/guides/rate-limits, also see Rate limits in https://platform.openai.com/docs/models/gpt-5
+
+Claude recommended the following solution:
 Go to https://platform.openai.com/account/billing
 Add a payment method (even if you have free credits)
 Generate a new API key
 Try again
 
-I tried to use use GitHub models OpenAI 5.0 (from https://github.com/marketplace/models/azure-openai/gpt-5/playground), but GPT5 models were returning "not available" in GitHub models, even when testing in the UI
+My OpenAI credits from 2023 were expired so I bought new ones, more info at \\CoyTeraStation\Personal\Datos\Accesos y Subscripcion\Accesos\OpenAI
+
+
+I also tried to use use GitHub models OpenAI 5.0 (from https://github.com/marketplace/models/azure-openai/gpt-5/playground), but GPT5 models were returning "not available" in GitHub models, even when testing in the UI.
+It looks like gpt5 is not available in GitHub models for Copilot Free users as of Oct 25:
+https://docs.github.com/en/github-models/use-github-models/prototyping-with-ai-models#rate-limits
+
 Note: Because I was using a GitHub models OpenAI key, I changed the instanciation of OpenAI to point to Azure OpenAI endpoint. I finally made it conditinal, based on the key pattern
 endpoint = "https://models.github.ai/inference" # or "https://models.inference.ai.azure.com"
 client = OpenAI(

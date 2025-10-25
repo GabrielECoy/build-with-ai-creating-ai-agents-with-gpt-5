@@ -13,7 +13,7 @@ UsingGitHub = (token[:10]=="github_pat")
 print (f"Token: {token} - Using GitHub: {UsingGitHub}")
 
 endpoint = "https://models.github.ai/inference"
-model = "gpt-5" # "gpt-4o" #  o "openai/gpt-4o"
+model = "gpt-5" # "gpt-4o" # "openai/gpt-4o"
 
 def main():
     if UsingGitHub:
@@ -28,13 +28,14 @@ def main():
 
     response = client.chat.completions.create(
         model=model,
+        max_tokens=100, # Reduced token limit to try avoid you exceeded your current quota error in OpenAI
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": "What is the capital of France?"}
         ]
     )
 
-    print(response.choices[0].message.content)
+    print(f"Response from model {model} is: ",response.choices[0].message.content)
 
 from pprint import pprint
 if __name__ == "__main__":
