@@ -28,7 +28,8 @@ def main():
 
     response = client.chat.completions.create(
         model=model,
-        max_tokens=100, # Reduced token limit to try avoid you exceeded your current quota error in OpenAI
+        # Reduced token limit to try avoid you exceeded your current quota error in OpenAI
+        # # max_completion_tokens= 100 (max_tokens for older model which included the input text in the max)
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": "What is the capital of France?"}

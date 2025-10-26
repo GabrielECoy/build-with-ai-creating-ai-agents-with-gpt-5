@@ -54,7 +54,7 @@ else:
             api_key=token,
     )
 
-if True:
+if False: # LLM model test
     question="Tell me a fun fact about the ocean."
     response = client.chat.completions.create(
         model=model,
@@ -74,7 +74,7 @@ class WeatherInfo:
     temp_f: float
     condition: str
 
-@function_tool
+@function_tool # See Fnction_Tool Copilot explanation for details on what this decorator does. It turns the function into a tool that can be called by the agent.
 def get_weather_forecast(city: str):
     """Fetch weather info using the Weather API - https://www.weatherapi.com/
        Create an account and generate your API key - https://www.weatherapi.com/my/ 
@@ -137,11 +137,31 @@ if False:
     print(vars(get_weather_forecast) if hasattr(get_weather_forecast, '__dict__') else "No __dict__")
     print("\n")
 
-city = "Atlanta"
+city = "Winter Garden, FL" # Horizon West FL did not worked correctly
 
-if False:
+if False: # Test Get Weather Forecast Function
+    weather_result = get_weather_forecast(city) # This only works by removing the @function_tool decorator, since it turns the function into a tool object. See CallingAFunctionToolDecoratedFunction.md
+    print(f"Weather forecast for {city}:\n{weather_result}\n")
+
+if True: # Actual Exercise test
     result = Runner.run_sync(trip_agent, f"""Headed to {city} today. What weather should I expect and 
                                              what is the exact temperature right now? 
                                              Also, what types of clothes should I pack""")
     print(result.final_output)
-
+    
+    from pprint import pprint
+    import rich # Requires: pip install rich
+    if False : # Use pythons default pretty print instead of Rich library print
+        print ("\nRaw Result")
+        pprint(result)
+        print ("\nRaw Responses")
+        pprint(result.raw_responses)
+        print ("\nItems")
+        pprint(result.new_items)
+    else : # Use Rich library for better formatting
+        print ("\nRaw Result")
+        rich.print(result)
+        print ("\nRaw Responses")
+        rich.print(result.raw_responses)
+        print ("\nItems")
+        rich.print(result.new_items)
