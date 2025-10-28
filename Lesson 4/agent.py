@@ -107,12 +107,17 @@ async def main():
 
 
    # Second turn - agent automatically remembers previous context
-   result = await Runner.run(
-     trip_agent,
-     "Can you recommend a seafood restaurant?",
-     session=session
-   )
-
+   if True: # With Memory
+       result = await Runner.run(
+       trip_agent,
+       "Can you recommend a seafood restaurant?",
+       session=session
+      )
+   else: # Without Memory
+       result = await Runner.run(
+       trip_agent,
+       "Can you recommend a seafood restaurant?"
+      )
    print(result.final_output)  
 
 if __name__ == "__main__":
