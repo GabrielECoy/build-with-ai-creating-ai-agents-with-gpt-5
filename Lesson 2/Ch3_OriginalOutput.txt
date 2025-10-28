@@ -1,0 +1,966 @@
+Current folder:  /workspaces/build-with-ai-creating-ai-agents-with-gpt-5
+DotEnv file folder:  /workspaces/build-with-ai-creating-ai-agents-with-gpt-5/.env
+
+
+Token: sk-proj **Redacted**xEQA - Using GitHub: False
+
+
+Here’s the latest for Winter Garden, FL:
+
+- Current conditions: 72.0°F with patchy rain nearby.
+- What to expect today: Intermittent light showers possible with clouds and some breaks of sun. It should feel warm and a bit humid; keep rain protection handy.
+
+Packing suggestions:
+- Light, breathable clothing (t‑shirts, shorts or lightweight pants)
+- Light rain jacket or compact umbrella; quick‑dry layers
+- Comfortable walking shoes that can handle getting a bit wet, plus spare socks
+- Hat, sunglasses, sunscreen; reusable water bottle; bug spray
+- Light sweater or layer for cooler evenings or strong indoor A/C
+- Optional: small waterproof pouch for phone/essentials
+
+Want me to pull the hour‑by‑hour forecast or check the outlook for the next few days?
+
+Raw Result
+RunResult(
+    input='Headed to Winter Garden, FL today. What weather should I expect and \n                            
+what is the exact temperature right now? \n                                             Also, what types of 
+clothes should I pack',
+    new_items=[
+        ReasoningItem(
+            agent=Agent(
+                name='Trip Coach',
+                handoff_description=None,
+                tools=[
+                    FunctionTool(
+                        name='get_weather_forecast',
+                        description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                        params_json_schema={
+                            'properties': {'city': {'title': 'City', 'type': 'string'}},
+                            'required': ['city'],
+                            'title': 'get_weather_forecast_args',
+                            'type': 'object',
+                            'additionalProperties': False
+                        },
+                        on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                        strict_json_schema=True,
+                        is_enabled=True
+                    )
+                ],
+                mcp_servers=[],
+                mcp_config={},
+                instructions='You help travelers plan by checking real-time weather.When asked about weather 
+or packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make 
+your recommendations.',
+                prompt=None,
+                handoffs=[],
+                model='gpt-5',
+                model_settings=ModelSettings(
+                    temperature=None,
+                    top_p=None,
+                    frequency_penalty=None,
+                    presence_penalty=None,
+                    tool_choice=None,
+                    parallel_tool_calls=None,
+                    truncation=None,
+                    max_tokens=None,
+                    reasoning=None,
+                    verbosity=None,
+                    metadata=None,
+                    store=None,
+                    include_usage=None,
+                    response_include=None,
+                    top_logprobs=None,
+                    extra_query=None,
+                    extra_body=None,
+                    extra_headers=None,
+                    extra_args=None
+                ),
+                input_guardrails=[],
+                output_guardrails=[],
+                output_type=None,
+                hooks=None,
+                tool_use_behavior='run_llm_again',
+                reset_tool_choice=True
+            ),
+            raw_item=ResponseReasoningItem(
+                id='rs_0e8251fdb19f673e0069001c4a9ea081a08e29777569660060',
+                summary=[],
+                type='reasoning',
+                content=None,
+                encrypted_content=None,
+                status=None
+            ),
+            type='reasoning_item'
+        ),
+        ToolCallItem(
+            agent=Agent(
+                name='Trip Coach',
+                handoff_description=None,
+                tools=[
+                    FunctionTool(
+                        name='get_weather_forecast',
+                        description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                        params_json_schema={
+                            'properties': {'city': {'title': 'City', 'type': 'string'}},
+                            'required': ['city'],
+                            'title': 'get_weather_forecast_args',
+                            'type': 'object',
+                            'additionalProperties': False
+                        },
+                        on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                        strict_json_schema=True,
+                        is_enabled=True
+                    )
+                ],
+                mcp_servers=[],
+                mcp_config={},
+                instructions='You help travelers plan by checking real-time weather.When asked about weather 
+or packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make 
+your recommendations.',
+                prompt=None,
+                handoffs=[],
+                model='gpt-5',
+                model_settings=ModelSettings(
+                    temperature=None,
+                    top_p=None,
+                    frequency_penalty=None,
+                    presence_penalty=None,
+                    tool_choice=None,
+                    parallel_tool_calls=None,
+                    truncation=None,
+                    max_tokens=None,
+                    reasoning=None,
+                    verbosity=None,
+                    metadata=None,
+                    store=None,
+                    include_usage=None,
+                    response_include=None,
+                    top_logprobs=None,
+                    extra_query=None,
+                    extra_body=None,
+                    extra_headers=None,
+                    extra_args=None
+                ),
+                input_guardrails=[],
+                output_guardrails=[],
+                output_type=None,
+                hooks=None,
+                tool_use_behavior='run_llm_again',
+                reset_tool_choice=True
+            ),
+            raw_item=ResponseFunctionToolCall(
+                arguments='{"city":"Winter Garden, FL"}',
+                call_id='call_WRIMuourn1L4EJe49wilEmrO',
+                name='get_weather_forecast',
+                type='function_call',
+                id='fc_0e8251fdb19f673e0069001c4de7c481a080524fd7b4a14491',
+                status='completed'
+            ),
+            type='tool_call_item'
+        ),
+        ToolCallOutputItem(
+            agent=Agent(
+                name='Trip Coach',
+                handoff_description=None,
+                tools=[
+                    FunctionTool(
+                        name='get_weather_forecast',
+                        description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                        params_json_schema={
+                            'properties': {'city': {'title': 'City', 'type': 'string'}},
+                            'required': ['city'],
+                            'title': 'get_weather_forecast_args',
+                            'type': 'object',
+                            'additionalProperties': False
+                        },
+                        on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                        strict_json_schema=True,
+                        is_enabled=True
+                    )
+                ],
+                mcp_servers=[],
+                mcp_config={},
+                instructions='You help travelers plan by checking real-time weather.When asked about weather 
+or packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make 
+your recommendations.',
+                prompt=None,
+                handoffs=[],
+                model='gpt-5',
+                model_settings=ModelSettings(
+                    temperature=None,
+                    top_p=None,
+                    frequency_penalty=None,
+                    presence_penalty=None,
+                    tool_choice=None,
+                    parallel_tool_calls=None,
+                    truncation=None,
+                    max_tokens=None,
+                    reasoning=None,
+                    verbosity=None,
+                    metadata=None,
+                    store=None,
+                    include_usage=None,
+                    response_include=None,
+                    top_logprobs=None,
+                    extra_query=None,
+                    extra_body=None,
+                    extra_headers=None,
+                    extra_args=None
+                ),
+                input_guardrails=[],
+                output_guardrails=[],
+                output_type=None,
+                hooks=None,
+                tool_use_behavior='run_llm_again',
+                reset_tool_choice=True
+            ),
+            raw_item={
+                'call_id': 'call_WRIMuourn1L4EJe49wilEmrO',
+                'output': 'Real-time weather report for 2025-10-28:\n   - City: Winter Garden   - Country: 
+United States of America   - Temperature: 72.0 °F   - Weather Conditions: Patchy rain nearby',
+                'type': 'function_call_output'
+            },
+            output='Real-time weather report for 2025-10-28:\n   - City: Winter Garden   - Country: United 
+States of America   - Temperature: 72.0 °F   - Weather Conditions: Patchy rain nearby',
+            type='tool_call_output_item'
+        ),
+        ReasoningItem(
+            agent=Agent(
+                name='Trip Coach',
+                handoff_description=None,
+                tools=[
+                    FunctionTool(
+                        name='get_weather_forecast',
+                        description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                        params_json_schema={
+                            'properties': {'city': {'title': 'City', 'type': 'string'}},
+                            'required': ['city'],
+                            'title': 'get_weather_forecast_args',
+                            'type': 'object',
+                            'additionalProperties': False
+                        },
+                        on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                        strict_json_schema=True,
+                        is_enabled=True
+                    )
+                ],
+                mcp_servers=[],
+                mcp_config={},
+                instructions='You help travelers plan by checking real-time weather.When asked about weather 
+or packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make 
+your recommendations.',
+                prompt=None,
+                handoffs=[],
+                model='gpt-5',
+                model_settings=ModelSettings(
+                    temperature=None,
+                    top_p=None,
+                    frequency_penalty=None,
+                    presence_penalty=None,
+                    tool_choice=None,
+                    parallel_tool_calls=None,
+                    truncation=None,
+                    max_tokens=None,
+                    reasoning=None,
+                    verbosity=None,
+                    metadata=None,
+                    store=None,
+                    include_usage=None,
+                    response_include=None,
+                    top_logprobs=None,
+                    extra_query=None,
+                    extra_body=None,
+                    extra_headers=None,
+                    extra_args=None
+                ),
+                input_guardrails=[],
+                output_guardrails=[],
+                output_type=None,
+                hooks=None,
+                tool_use_behavior='run_llm_again',
+                reset_tool_choice=True
+            ),
+            raw_item=ResponseReasoningItem(
+                id='rs_0e8251fdb19f673e0069001c50c80c81a09d5da0d2b17cb706',
+                summary=[],
+                type='reasoning',
+                content=None,
+                encrypted_content=None,
+                status=None
+            ),
+            type='reasoning_item'
+        ),
+        MessageOutputItem(
+            agent=Agent(
+                name='Trip Coach',
+                handoff_description=None,
+                tools=[
+                    FunctionTool(
+                        name='get_weather_forecast',
+                        description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                        params_json_schema={
+                            'properties': {'city': {'title': 'City', 'type': 'string'}},
+                            'required': ['city'],
+                            'title': 'get_weather_forecast_args',
+                            'type': 'object',
+                            'additionalProperties': False
+                        },
+                        on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                        strict_json_schema=True,
+                        is_enabled=True
+                    )
+                ],
+                mcp_servers=[],
+                mcp_config={},
+                instructions='You help travelers plan by checking real-time weather.When asked about weather 
+or packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make 
+your recommendations.',
+                prompt=None,
+                handoffs=[],
+                model='gpt-5',
+                model_settings=ModelSettings(
+                    temperature=None,
+                    top_p=None,
+                    frequency_penalty=None,
+                    presence_penalty=None,
+                    tool_choice=None,
+                    parallel_tool_calls=None,
+                    truncation=None,
+                    max_tokens=None,
+                    reasoning=None,
+                    verbosity=None,
+                    metadata=None,
+                    store=None,
+                    include_usage=None,
+                    response_include=None,
+                    top_logprobs=None,
+                    extra_query=None,
+                    extra_body=None,
+                    extra_headers=None,
+                    extra_args=None
+                ),
+                input_guardrails=[],
+                output_guardrails=[],
+                output_type=None,
+                hooks=None,
+                tool_use_behavior='run_llm_again',
+                reset_tool_choice=True
+            ),
+            raw_item=ResponseOutputMessage(
+                id='msg_0e8251fdb19f673e0069001c6f654c81a08f0168e9d91969e9',
+                content=[
+                    ResponseOutputText(
+                        annotations=[],
+                        text='Here’s the latest for Winter Garden, FL:\n\n- Current conditions: 72.0°F with 
+patchy rain nearby.\n- What to expect today: Intermittent light showers possible with clouds and some breaks 
+of sun. It should feel warm and a bit humid; keep rain protection handy.\n\nPacking suggestions:\n- Light, 
+breathable clothing (t‑shirts, shorts or lightweight pants)\n- Light rain jacket or compact umbrella; 
+quick‑dry layers\n- Comfortable walking shoes that can handle getting a bit wet, plus spare socks\n- Hat, 
+sunglasses, sunscreen; reusable water bottle; bug spray\n- Light sweater or layer for cooler evenings or 
+strong indoor A/C\n- Optional: small waterproof pouch for phone/essentials\n\nWant me to pull the 
+hour‑by‑hour forecast or check the outlook for the next few days?',
+                        type='output_text',
+                        logprobs=[]
+                    )
+                ],
+                role='assistant',
+                status='completed',
+                type='message'
+            ),
+            type='message_output_item'
+        )
+    ],
+    raw_responses=[
+        ModelResponse(
+            output=[
+                ResponseReasoningItem(
+                    id='rs_0e8251fdb19f673e0069001c4a9ea081a08e29777569660060',
+                    summary=[],
+                    type='reasoning',
+                    content=None,
+                    encrypted_content=None,
+                    status=None
+                ),
+                ResponseFunctionToolCall(
+                    arguments='{"city":"Winter Garden, FL"}',
+                    call_id='call_WRIMuourn1L4EJe49wilEmrO',
+                    name='get_weather_forecast',
+                    type='function_call',
+                    id='fc_0e8251fdb19f673e0069001c4de7c481a080524fd7b4a14491',
+                    status='completed'
+                )
+            ],
+            usage=Usage(
+                requests=1,
+                input_tokens=158,
+                input_tokens_details=InputTokensDetails(cached_tokens=0),
+                output_tokens=217,
+                output_tokens_details=OutputTokensDetails(reasoning_tokens=192),
+                total_tokens=375
+            ),
+            response_id='resp_0e8251fdb19f673e0069001c4a3b4c81a08d2c9e6516a67a0c'
+        ),
+        ModelResponse(
+            output=[
+                ResponseReasoningItem(
+                    id='rs_0e8251fdb19f673e0069001c50c80c81a09d5da0d2b17cb706',
+                    summary=[],
+                    type='reasoning',
+                    content=None,
+                    encrypted_content=None,
+                    status=None
+                ),
+                ResponseOutputMessage(
+                    id='msg_0e8251fdb19f673e0069001c6f654c81a08f0168e9d91969e9',
+                    content=[
+                        ResponseOutputText(
+                            annotations=[],
+                            text='Here’s the latest for Winter Garden, FL:\n\n- Current conditions: 72.0°F 
+with patchy rain nearby.\n- What to expect today: Intermittent light showers possible with clouds and some 
+breaks of sun. It should feel warm and a bit humid; keep rain protection handy.\n\nPacking suggestions:\n- 
+Light, breathable clothing (t‑shirts, shorts or lightweight pants)\n- Light rain jacket or compact umbrella; 
+quick‑dry layers\n- Comfortable walking shoes that can handle getting a bit wet, plus spare socks\n- Hat, 
+sunglasses, sunscreen; reusable water bottle; bug spray\n- Light sweater or layer for cooler evenings or 
+strong indoor A/C\n- Optional: small waterproof pouch for phone/essentials\n\nWant me to pull the 
+hour‑by‑hour forecast or check the outlook for the next few days?',
+                            type='output_text',
+                            logprobs=[]
+                        )
+                    ],
+                    role='assistant',
+                    status='completed',
+                    type='message'
+                )
+            ],
+            usage=Usage(
+                requests=1,
+                input_tokens=447,
+                input_tokens_details=InputTokensDetails(cached_tokens=0),
+                output_tokens=941,
+                output_tokens_details=OutputTokensDetails(reasoning_tokens=768),
+                total_tokens=1388
+            ),
+            response_id='resp_0e8251fdb19f673e0069001c4f1cac81a0b85b731f330e0c99'
+        )
+    ],
+    final_output='Here’s the latest for Winter Garden, FL:\n\n- Current conditions: 72.0°F with patchy rain 
+nearby.\n- What to expect today: Intermittent light showers possible with clouds and some breaks of sun. It 
+should feel warm and a bit humid; keep rain protection handy.\n\nPacking suggestions:\n- Light, breathable 
+clothing (t‑shirts, shorts or lightweight pants)\n- Light rain jacket or compact umbrella; quick‑dry 
+layers\n- Comfortable walking shoes that can handle getting a bit wet, plus spare socks\n- Hat, sunglasses, 
+sunscreen; reusable water bottle; bug spray\n- Light sweater or layer for cooler evenings or strong indoor 
+A/C\n- Optional: small waterproof pouch for phone/essentials\n\nWant me to pull the hour‑by‑hour forecast or 
+check the outlook for the next few days?',
+    input_guardrail_results=[],
+    output_guardrail_results=[],
+    context_wrapper=RunContextWrapper(
+        context=None,
+        usage=Usage(
+            requests=2,
+            input_tokens=605,
+            input_tokens_details=InputTokensDetails(cached_tokens=0),
+            output_tokens=1158,
+            output_tokens_details=OutputTokensDetails(reasoning_tokens=960),
+            total_tokens=1763
+        )
+    ),
+    _last_agent=Agent(
+        name='Trip Coach',
+        handoff_description=None,
+        tools=[
+            FunctionTool(
+                name='get_weather_forecast',
+                description='Fetch weather info using the Weather API - https://www.weatherapi.com/\nCreate 
+an account and generate your API key - https://www.weatherapi.com/my/',
+                params_json_schema={
+                    'properties': {'city': {'title': 'City', 'type': 'string'}},
+                    'required': ['city'],
+                    'title': 'get_weather_forecast_args',
+                    'type': 'object',
+                    'additionalProperties': False
+                },
+                on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                strict_json_schema=True,
+                is_enabled=True
+            )
+        ],
+        mcp_servers=[],
+        mcp_config={},
+        instructions='You help travelers plan by checking real-time weather.When asked about weather or 
+packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make your 
+recommendations.',
+        prompt=None,
+        handoffs=[],
+        model='gpt-5',
+        model_settings=ModelSettings(
+            temperature=None,
+            top_p=None,
+            frequency_penalty=None,
+            presence_penalty=None,
+            tool_choice=None,
+            parallel_tool_calls=None,
+            truncation=None,
+            max_tokens=None,
+            reasoning=None,
+            verbosity=None,
+            metadata=None,
+            store=None,
+            include_usage=None,
+            response_include=None,
+            top_logprobs=None,
+            extra_query=None,
+            extra_body=None,
+            extra_headers=None,
+            extra_args=None
+        ),
+        input_guardrails=[],
+        output_guardrails=[],
+        output_type=None,
+        hooks=None,
+        tool_use_behavior='run_llm_again',
+        reset_tool_choice=True
+    )
+)
+
+Raw Responses
+[
+    ModelResponse(
+        output=[
+            ResponseReasoningItem(
+                id='rs_0e8251fdb19f673e0069001c4a9ea081a08e29777569660060',
+                summary=[],
+                type='reasoning',
+                content=None,
+                encrypted_content=None,
+                status=None
+            ),
+            ResponseFunctionToolCall(
+                arguments='{"city":"Winter Garden, FL"}',
+                call_id='call_WRIMuourn1L4EJe49wilEmrO',
+                name='get_weather_forecast',
+                type='function_call',
+                id='fc_0e8251fdb19f673e0069001c4de7c481a080524fd7b4a14491',
+                status='completed'
+            )
+        ],
+        usage=Usage(
+            requests=1,
+            input_tokens=158,
+            input_tokens_details=InputTokensDetails(cached_tokens=0),
+            output_tokens=217,
+            output_tokens_details=OutputTokensDetails(reasoning_tokens=192),
+            total_tokens=375
+        ),
+        response_id='resp_0e8251fdb19f673e0069001c4a3b4c81a08d2c9e6516a67a0c'
+    ),
+    ModelResponse(
+        output=[
+            ResponseReasoningItem(
+                id='rs_0e8251fdb19f673e0069001c50c80c81a09d5da0d2b17cb706',
+                summary=[],
+                type='reasoning',
+                content=None,
+                encrypted_content=None,
+                status=None
+            ),
+            ResponseOutputMessage(
+                id='msg_0e8251fdb19f673e0069001c6f654c81a08f0168e9d91969e9',
+                content=[
+                    ResponseOutputText(
+                        annotations=[],
+                        text='Here’s the latest for Winter Garden, FL:\n\n- Current conditions: 72.0°F with 
+patchy rain nearby.\n- What to expect today: Intermittent light showers possible with clouds and some breaks 
+of sun. It should feel warm and a bit humid; keep rain protection handy.\n\nPacking suggestions:\n- Light, 
+breathable clothing (t‑shirts, shorts or lightweight pants)\n- Light rain jacket or compact umbrella; 
+quick‑dry layers\n- Comfortable walking shoes that can handle getting a bit wet, plus spare socks\n- Hat, 
+sunglasses, sunscreen; reusable water bottle; bug spray\n- Light sweater or layer for cooler evenings or 
+strong indoor A/C\n- Optional: small waterproof pouch for phone/essentials\n\nWant me to pull the 
+hour‑by‑hour forecast or check the outlook for the next few days?',
+                        type='output_text',
+                        logprobs=[]
+                    )
+                ],
+                role='assistant',
+                status='completed',
+                type='message'
+            )
+        ],
+        usage=Usage(
+            requests=1,
+            input_tokens=447,
+            input_tokens_details=InputTokensDetails(cached_tokens=0),
+            output_tokens=941,
+            output_tokens_details=OutputTokensDetails(reasoning_tokens=768),
+            total_tokens=1388
+        ),
+        response_id='resp_0e8251fdb19f673e0069001c4f1cac81a0b85b731f330e0c99'
+    )
+]
+
+Items
+[
+    ReasoningItem(
+        agent=Agent(
+            name='Trip Coach',
+            handoff_description=None,
+            tools=[
+                FunctionTool(
+                    name='get_weather_forecast',
+                    description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                    params_json_schema={
+                        'properties': {'city': {'title': 'City', 'type': 'string'}},
+                        'required': ['city'],
+                        'title': 'get_weather_forecast_args',
+                        'type': 'object',
+                        'additionalProperties': False
+                    },
+                    on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                    strict_json_schema=True,
+                    is_enabled=True
+                )
+            ],
+            mcp_servers=[],
+            mcp_config={},
+            instructions='You help travelers plan by checking real-time weather.When asked about weather or 
+packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make your 
+recommendations.',
+            prompt=None,
+            handoffs=[],
+            model='gpt-5',
+            model_settings=ModelSettings(
+                temperature=None,
+                top_p=None,
+                frequency_penalty=None,
+                presence_penalty=None,
+                tool_choice=None,
+                parallel_tool_calls=None,
+                truncation=None,
+                max_tokens=None,
+                reasoning=None,
+                verbosity=None,
+                metadata=None,
+                store=None,
+                include_usage=None,
+                response_include=None,
+                top_logprobs=None,
+                extra_query=None,
+                extra_body=None,
+                extra_headers=None,
+                extra_args=None
+            ),
+            input_guardrails=[],
+            output_guardrails=[],
+            output_type=None,
+            hooks=None,
+            tool_use_behavior='run_llm_again',
+            reset_tool_choice=True
+        ),
+        raw_item=ResponseReasoningItem(
+            id='rs_0e8251fdb19f673e0069001c4a9ea081a08e29777569660060',
+            summary=[],
+            type='reasoning',
+            content=None,
+            encrypted_content=None,
+            status=None
+        ),
+        type='reasoning_item'
+    ),
+    ToolCallItem(
+        agent=Agent(
+            name='Trip Coach',
+            handoff_description=None,
+            tools=[
+                FunctionTool(
+                    name='get_weather_forecast',
+                    description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                    params_json_schema={
+                        'properties': {'city': {'title': 'City', 'type': 'string'}},
+                        'required': ['city'],
+                        'title': 'get_weather_forecast_args',
+                        'type': 'object',
+                        'additionalProperties': False
+                    },
+                    on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                    strict_json_schema=True,
+                    is_enabled=True
+                )
+            ],
+            mcp_servers=[],
+            mcp_config={},
+            instructions='You help travelers plan by checking real-time weather.When asked about weather or 
+packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make your 
+recommendations.',
+            prompt=None,
+            handoffs=[],
+            model='gpt-5',
+            model_settings=ModelSettings(
+                temperature=None,
+                top_p=None,
+                frequency_penalty=None,
+                presence_penalty=None,
+                tool_choice=None,
+                parallel_tool_calls=None,
+                truncation=None,
+                max_tokens=None,
+                reasoning=None,
+                verbosity=None,
+                metadata=None,
+                store=None,
+                include_usage=None,
+                response_include=None,
+                top_logprobs=None,
+                extra_query=None,
+                extra_body=None,
+                extra_headers=None,
+                extra_args=None
+            ),
+            input_guardrails=[],
+            output_guardrails=[],
+            output_type=None,
+            hooks=None,
+            tool_use_behavior='run_llm_again',
+            reset_tool_choice=True
+        ),
+        raw_item=ResponseFunctionToolCall(
+            arguments='{"city":"Winter Garden, FL"}',
+            call_id='call_WRIMuourn1L4EJe49wilEmrO',
+            name='get_weather_forecast',
+            type='function_call',
+            id='fc_0e8251fdb19f673e0069001c4de7c481a080524fd7b4a14491',
+            status='completed'
+        ),
+        type='tool_call_item'
+    ),
+    ToolCallOutputItem(
+        agent=Agent(
+            name='Trip Coach',
+            handoff_description=None,
+            tools=[
+                FunctionTool(
+                    name='get_weather_forecast',
+                    description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                    params_json_schema={
+                        'properties': {'city': {'title': 'City', 'type': 'string'}},
+                        'required': ['city'],
+                        'title': 'get_weather_forecast_args',
+                        'type': 'object',
+                        'additionalProperties': False
+                    },
+                    on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                    strict_json_schema=True,
+                    is_enabled=True
+                )
+            ],
+            mcp_servers=[],
+            mcp_config={},
+            instructions='You help travelers plan by checking real-time weather.When asked about weather or 
+packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make your 
+recommendations.',
+            prompt=None,
+            handoffs=[],
+            model='gpt-5',
+            model_settings=ModelSettings(
+                temperature=None,
+                top_p=None,
+                frequency_penalty=None,
+                presence_penalty=None,
+                tool_choice=None,
+                parallel_tool_calls=None,
+                truncation=None,
+                max_tokens=None,
+                reasoning=None,
+                verbosity=None,
+                metadata=None,
+                store=None,
+                include_usage=None,
+                response_include=None,
+                top_logprobs=None,
+                extra_query=None,
+                extra_body=None,
+                extra_headers=None,
+                extra_args=None
+            ),
+            input_guardrails=[],
+            output_guardrails=[],
+            output_type=None,
+            hooks=None,
+            tool_use_behavior='run_llm_again',
+            reset_tool_choice=True
+        ),
+        raw_item={
+            'call_id': 'call_WRIMuourn1L4EJe49wilEmrO',
+            'output': 'Real-time weather report for 2025-10-28:\n   - City: Winter Garden   - Country: United
+States of America   - Temperature: 72.0 °F   - Weather Conditions: Patchy rain nearby',
+            'type': 'function_call_output'
+        },
+        output='Real-time weather report for 2025-10-28:\n   - City: Winter Garden   - Country: United States
+of America   - Temperature: 72.0 °F   - Weather Conditions: Patchy rain nearby',
+        type='tool_call_output_item'
+    ),
+    ReasoningItem(
+        agent=Agent(
+            name='Trip Coach',
+            handoff_description=None,
+            tools=[
+                FunctionTool(
+                    name='get_weather_forecast',
+                    description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                    params_json_schema={
+                        'properties': {'city': {'title': 'City', 'type': 'string'}},
+                        'required': ['city'],
+                        'title': 'get_weather_forecast_args',
+                        'type': 'object',
+                        'additionalProperties': False
+                    },
+                    on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                    strict_json_schema=True,
+                    is_enabled=True
+                )
+            ],
+            mcp_servers=[],
+            mcp_config={},
+            instructions='You help travelers plan by checking real-time weather.When asked about weather or 
+packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make your 
+recommendations.',
+            prompt=None,
+            handoffs=[],
+            model='gpt-5',
+            model_settings=ModelSettings(
+                temperature=None,
+                top_p=None,
+                frequency_penalty=None,
+                presence_penalty=None,
+                tool_choice=None,
+                parallel_tool_calls=None,
+                truncation=None,
+                max_tokens=None,
+                reasoning=None,
+                verbosity=None,
+                metadata=None,
+                store=None,
+                include_usage=None,
+                response_include=None,
+                top_logprobs=None,
+                extra_query=None,
+                extra_body=None,
+                extra_headers=None,
+                extra_args=None
+            ),
+            input_guardrails=[],
+            output_guardrails=[],
+            output_type=None,
+            hooks=None,
+            tool_use_behavior='run_llm_again',
+            reset_tool_choice=True
+        ),
+        raw_item=ResponseReasoningItem(
+            id='rs_0e8251fdb19f673e0069001c50c80c81a09d5da0d2b17cb706',
+            summary=[],
+            type='reasoning',
+            content=None,
+            encrypted_content=None,
+            status=None
+        ),
+        type='reasoning_item'
+    ),
+    MessageOutputItem(
+        agent=Agent(
+            name='Trip Coach',
+            handoff_description=None,
+            tools=[
+                FunctionTool(
+                    name='get_weather_forecast',
+                    description='Fetch weather info using the Weather API - 
+https://www.weatherapi.com/\nCreate an account and generate your API key - https://www.weatherapi.com/my/',
+                    params_json_schema={
+                        'properties': {'city': {'title': 'City', 'type': 'string'}},
+                        'required': ['city'],
+                        'title': 'get_weather_forecast_args',
+                        'type': 'object',
+                        'additionalProperties': False
+                    },
+                    on_invoke_tool=<function 
+function_tool.<locals>._create_function_tool.<locals>._on_invoke_tool at 0x7a8f6e78dda0>,
+                    strict_json_schema=True,
+                    is_enabled=True
+                )
+            ],
+            mcp_servers=[],
+            mcp_config={},
+            instructions='You help travelers plan by checking real-time weather.When asked about weather or 
+packing, call the get_weather_forecast tool.Make sure you have access to real-time weather data to make your 
+recommendations.',
+            prompt=None,
+            handoffs=[],
+            model='gpt-5',
+            model_settings=ModelSettings(
+                temperature=None,
+                top_p=None,
+                frequency_penalty=None,
+                presence_penalty=None,
+                tool_choice=None,
+                parallel_tool_calls=None,
+                truncation=None,
+                max_tokens=None,
+                reasoning=None,
+                verbosity=None,
+                metadata=None,
+                store=None,
+                include_usage=None,
+                response_include=None,
+                top_logprobs=None,
+                extra_query=None,
+                extra_body=None,
+                extra_headers=None,
+                extra_args=None
+            ),
+            input_guardrails=[],
+            output_guardrails=[],
+            output_type=None,
+            hooks=None,
+            tool_use_behavior='run_llm_again',
+            reset_tool_choice=True
+        ),
+        raw_item=ResponseOutputMessage(
+            id='msg_0e8251fdb19f673e0069001c6f654c81a08f0168e9d91969e9',
+            content=[
+                ResponseOutputText(
+                    annotations=[],
+                    text='Here’s the latest for Winter Garden, FL:\n\n- Current conditions: 72.0°F with 
+patchy rain nearby.\n- What to expect today: Intermittent light showers possible with clouds and some breaks 
+of sun. It should feel warm and a bit humid; keep rain protection handy.\n\nPacking suggestions:\n- Light, 
+breathable clothing (t‑shirts, shorts or lightweight pants)\n- Light rain jacket or compact umbrella; 
+quick‑dry layers\n- Comfortable walking shoes that can handle getting a bit wet, plus spare socks\n- Hat, 
+sunglasses, sunscreen; reusable water bottle; bug spray\n- Light sweater or layer for cooler evenings or 
+strong indoor A/C\n- Optional: small waterproof pouch for phone/essentials\n\nWant me to pull the 
+hour‑by‑hour forecast or check the outlook for the next few days?',
+                    type='output_text',
+                    logprobs=[]
+                )
+            ],
+            role='assistant',
+            status='completed',
+            type='message'
+        ),
+        type='message_output_item'
+    )
+]
